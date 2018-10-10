@@ -1,0 +1,31 @@
+{
+  "name": "landings-images-tools",
+  "version": "1.0.0",
+  "description": "Various tools for images processing",
+  "main": "null",
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ambisafe/landings-images-tools.git"
+  },
+  "keywords": [
+    "images",
+    "tools"
+  ],
+  "author": "Vasilenko Oleksii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ambisafe/landings-images-tools/issues"
+  },
+  "homepage": "https://github.com/Ambisafe/landings-images-tools#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-webp": "^3.0.0"
+  }
+}
