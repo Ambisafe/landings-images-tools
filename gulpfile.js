@@ -21,15 +21,29 @@ gulp.task('clean', function(){
 
 gulp.task('toWebp', function() {
 	return gulp.src('src/**')
+		.pipe(gulp.dest('dist/'))
 		.pipe(webp())
 		.pipe(gulp.dest('dist/'))
 });
 
-gulp.task('resize', function() {
+gulp.task('resize', ['clean'], function() {
 	return gulp.src('src/**')
 		.pipe(resize({
 			percentage: 50,
-			imageMagick: true
+			imageMagick: true,
+			crop: true,
+			interlace: true,
+			quality: 1,
+			upscale: false
 			}))
+		.pipe(rename(function (path) {
+		    path.basename = path.basename.slice(0, path.basename.length-3)
+		  }))
 		.pipe(gulp.dest('src/'))
+});
+
+gulp.task('min', ['clean'], function() {
+	return gulp.src('src/**')
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/'))
 });
